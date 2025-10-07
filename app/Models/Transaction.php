@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Transaction extends Model
 {
-    const TYPE_IN = 'in';
-    const TYPE_OUT = 'out';
+    use HasFactory;
+    const TYPE_IN = 'masuk';
+    const TYPE_OUT = 'keluar';
 
     protected $fillable = [
         'item_id',
