@@ -2,17 +2,17 @@
 
 namespace App\Filament\Resources\Categories\Schemas;
 
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
 use Filament\Infolists\Components\IconEntry;
-use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Infolist;
 
 class CategoryInfolist
 {
-    public static function configure(Infolist $infolist): Infolist
+    public static function configure(Schema $schema): Schema
     {
-        return $infolist
-            ->schema([
+        return $schema
+            ->components([
                 Section::make('Informasi Kategori')
                     ->schema([
                         TextEntry::make('name')

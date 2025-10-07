@@ -2,17 +2,17 @@
 
 namespace App\Filament\Resources\Suppliers\Schemas;
 
+use Filament\Schemas\Schema;
 use Filament\Infolists\Components\IconEntry;
-use Filament\Infolists\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Infolists\Infolist;
 
 class SupplierInfolist
 {
-    public static function configure(Infolist $infolist): Infolist
+    public static function configure(Schema $schema): Schema
     {
-        return $infolist
-            ->schema([
+        return $schema
+            ->components([
                 Section::make('Informasi Supplier')
                     ->schema([
                         TextEntry::make('name')

@@ -2,18 +2,18 @@
 
 namespace App\Filament\Resources\Suppliers\Schemas;
 
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 class SupplierForm
 {
-    public static function configure(Form $form): Form
+    public static function configure(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Section::make('Informasi Supplier')
                     ->schema([
                         TextInput::make('name')
