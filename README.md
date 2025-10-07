@@ -1,61 +1,304 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Inventaris Barang Digital
+## Kementerian Hukum dan HAM Provinsi Kepulauan Riau
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 11">
+  <img src="https://img.shields.io/badge/Filament-3.x-F59E0B?style=for-the-badge&logo=php&logoColor=white" alt="Filament 3.x">
+  <img src="https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.1+">
+  <img src="https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL 8.0+">
 </p>
 
-## About Laravel
+## Tentang Aplikasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem Inventaris Barang Digital adalah aplikasi web modern yang dirancang khusus untuk mengelola inventaris barang di lingkungan Kementerian Hukum dan HAM Provinsi Kepulauan Riau. Aplikasi ini dibangun menggunakan framework Laravel dengan antarmuka admin yang menggunakan Filament PHP, memberikan pengalaman pengguna yang intuitif dan profesional.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 📦 **Manajemen Barang** - Pendaftaran dan tracking barang dengan kode unik
+- 📊 **Laporan Komprehensif** - Generate laporan inventaris yang detail
+- 👥 **Multi-User Access** - Sistem role-based dengan akses bertingkat
+- 🔒 **Keamanan Data** - Perlindungan data tingkat enterprise
+- 📱 **Responsive Design** - Akses dari berbagai perangkat
+- ⚡ **Otomatisasi Proses** - Workflow otomatis untuk inventaris
 
-## Learning Laravel
+## Persyaratan Sistem
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Sebelum menginstall aplikasi, pastikan sistem Anda memenuhi persyaratan berikut:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **PHP** >= 8.1
+- **Composer** (untuk dependency management)
+- **Node.js** >= 16.x dan **npm** (untuk asset compilation)
+- **MySQL** >= 8.0 atau **MariaDB** >= 10.3
+- **Web Server** (Apache/Nginx)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Extensions PHP yang Diperlukan
 
-## Laravel Sponsors
+```
+- BCMath PHP Extension
+- Ctype PHP Extension
+- cURL PHP Extension
+- DOM PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PCRE PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- GD PHP Extension
+- ZIP PHP Extension
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Instalasi
 
-### Premium Partners
+### 1. Clone Repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/your-username/goods-inventory-kemenkumham.git
+cd goods-inventory-kemenkumham
+```
 
-## Contributing
+### 2. Install Dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+# Install PHP dependencies
+composer install
 
-## Code of Conduct
+# Install Node.js dependencies
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. Konfigurasi Environment
 
-## Security Vulnerabilities
+```bash
+# Copy file environment
+cp .env.example .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Generate application key
+php artisan key:generate
+```
 
-## License
+### 4. Konfigurasi Database
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Edit file `.env` dan sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=goods_inventory
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+### 5. Migrasi Database
+
+```bash
+# Jalankan migrasi database
+php artisan migrate
+
+# (Opsional) Jalankan seeder untuk data contoh
+php artisan db:seed
+```
+
+### 6. Compile Assets
+
+```bash
+# Development
+npm run dev
+
+# Production
+npm run build
+```
+
+### 7. Storage Link
+
+```bash
+# Buat symbolic link untuk storage
+php artisan storage:link
+```
+
+### 8. Jalankan Aplikasi
+
+```bash
+# Development server
+php artisan serve
+```
+
+Aplikasi akan berjalan di `http://localhost:8000`
+
+## Konfigurasi Tambahan
+
+### File Upload Configuration
+
+Untuk mengoptimalkan upload file, edit konfigurasi di `php.ini`:
+
+```ini
+upload_max_filesize = 10M
+post_max_size = 10M
+max_execution_time = 300
+memory_limit = 256M
+```
+
+### Queue Configuration (Opsional)
+
+Untuk performa yang lebih baik, konfigurasikan queue:
+
+```bash
+# Jalankan queue worker
+php artisan queue:work
+```
+
+## Akses Admin
+
+Setelah instalasi selesai, buat user admin pertama:
+
+```bash
+php artisan make:filament-user
+```
+
+Kemudian akses panel admin di: `http://localhost:8000/admin`
+
+## Testing
+
+Jalankan test suite untuk memastikan aplikasi berfungsi dengan baik:
+
+```bash
+# Jalankan semua test
+php artisan test
+
+# Jalankan test dengan coverage
+php artisan test --coverage
+```
+
+## Deployment Production
+
+### 1. Optimasi untuk Production
+
+```bash
+# Cache konfigurasi
+php artisan config:cache
+
+# Cache route
+php artisan route:cache
+
+# Cache view
+php artisan view:cache
+
+# Optimasi autoloader
+composer install --optimize-autoloader --no-dev
+```
+
+### 2. Web Server Configuration
+
+#### Apache (.htaccess)
+
+File `.htaccess` sudah disediakan di folder `public/`
+
+#### Nginx
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    root /path/to/your/project/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+## Struktur Aplikasi
+
+```
+app/
+├── Filament/           # Filament admin panel resources
+│   ├── Resources/      # CRUD resources
+│   ├── Pages/          # Custom pages
+│   └── Widgets/        # Dashboard widgets
+├── Models/             # Eloquent models
+├── Exports/            # Excel export classes
+└── Services/           # Business logic services
+
+database/
+├── migrations/         # Database migrations
+├── seeders/           # Database seeders
+└── factories/         # Model factories
+
+resources/
+├── views/             # Blade templates
+├── css/               # Stylesheets
+└── js/                # JavaScript files
+```
+
+## Troubleshooting
+
+### Error: "Class not found"
+
+```bash
+# Clear dan regenerate autoloader
+composer dump-autoload
+```
+
+### Error: "Permission denied"
+
+```bash
+# Set permission untuk storage dan cache
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
+```
+
+### Error: Database connection
+
+- Pastikan MySQL/MariaDB berjalan
+- Periksa kredensial database di file `.env`
+- Pastikan database sudah dibuat
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada pengembangan aplikasi ini:
+
+1. Fork repository
+2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+## Lisensi
+
+Aplikasi ini menggunakan lisensi [MIT License](https://opensource.org/licenses/MIT).
+
+## Dukungan
+
+Untuk dukungan teknis atau pertanyaan, silakan hubungi:
+
+- **Email**: support@kemenkumham-kepri.go.id
+- **Dokumentasi**: Lihat file `PENJELASAN_APLIKASI.txt` untuk dokumentasi lengkap
+
+---
+
+**Dikembangkan dengan ❤️ untuk Kemenkumham Provinsi Kepulauan Riau**
