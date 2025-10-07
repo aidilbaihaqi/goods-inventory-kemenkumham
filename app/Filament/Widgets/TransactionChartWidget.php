@@ -26,14 +26,14 @@ class TransactionChartWidget extends ChartWidget
             $months[] = $monthName;
 
             // Count IN transactions for this month
-            $inCount = Transaction::where('type', 'in')
+            $inCount = Transaction::where('type', 'masuk')
                 ->whereYear('transaction_date', $month->year)
                 ->whereMonth('transaction_date', $month->month)
                 ->count();
             $inData[] = $inCount;
 
             // Count OUT transactions for this month
-            $outCount = Transaction::where('type', 'out')
+            $outCount = Transaction::where('type', 'keluar')
                 ->whereYear('transaction_date', $month->year)
                 ->whereMonth('transaction_date', $month->month)
                 ->count();

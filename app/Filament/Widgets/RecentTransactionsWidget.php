@@ -40,13 +40,15 @@ class RecentTransactionsWidget extends BaseWidget
                     ->label('Jenis')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'in' => 'success',
-                        'out' => 'danger',
+                        'masuk' => 'success',
+                        'keluar' => 'danger',
+                        'penyesuaian' => 'warning',
                         default => 'gray',
                     })
                     ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'in' => 'Masuk',
-                        'out' => 'Keluar',
+                        'masuk' => 'Masuk',
+                        'keluar' => 'Keluar',
+                        'penyesuaian' => 'Penyesuaian',
                         default => $state,
                     }),
                 Tables\Columns\TextColumn::make('quantity')

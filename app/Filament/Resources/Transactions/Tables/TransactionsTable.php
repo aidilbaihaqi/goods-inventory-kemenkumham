@@ -16,33 +16,65 @@ class TransactionsTable
         return $table
             ->columns([
                 TextColumn::make('item.name')
-                    ->searchable(),
+                    ->label('Barang')
+                    ->searchable()
+                    ->sortable()
+                    ->limit(30),
                 TextColumn::make('type')
-                    ->badge(),
+                    ->label('Jenis')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'masuk' => 'success',
+                        'keluar' => 'danger',
+                        'penyesuaian' => 'warning',
+                        default => 'gray',
+                    })
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'masuk' => 'Masuk',
+                        'keluar' => 'Keluar',
+                        'penyesuaian' => 'Penyesuaian',
+                        default => $state,
+                    }),
                 TextColumn::make('quantity')
+                    ->label('Jumlah')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('unit_price')
-                    ->numeric()
+                    ->label('Harga Satuan')
+                    ->money('IDR')
                     ->sortable(),
                 TextColumn::make('total_value')
-                    ->numeric()
+                    ->label('Total Nilai')
+                    ->money('IDR')
                     ->sortable(),
                 TextColumn::make('reference_no')
-                    ->searchable(),
+                    ->label('No. Referensi')
+                    ->searchable()
+                    ->sortable()
+                    ->copyable(),
                 TextColumn::make('supplier.name')
-                    ->searchable(),
+                    ->label('Supplier')
+                    ->searchable()
+                    ->sortable()
+                    ->placeholder('Tidak ada supplier')
+                    ->limit(20),
                 TextColumn::make('user.name')
-                    ->searchable(),
+                    ->label('User')
+                    ->searchable()
+                    ->sortable()
+                    ->limit(15),
                 TextColumn::make('transaction_date')
-                    ->date()
+                    ->label('Tanggal Transaksi')
+                    ->date('d/m/Y')
                     ->sortable(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Dibuat')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Diperbarui')
+                    ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
